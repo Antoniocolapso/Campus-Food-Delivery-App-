@@ -17,6 +17,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
+            android:layout_marginStart="10dp"
             android:autofillHints=""
             android:background="@drawable/search_bg"
             android:drawableEnd="@drawable/search_svgrepo_com"
@@ -31,16 +32,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/imageView4"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_marginEnd="15dp"
             android:background="@drawable/search_bg"
             android:contentDescription="@string/todo"
             android:padding="10dp"
             android:src="@drawable/person_svgrepo_com"
             app:layout_constraintBottom_toBottomOf="@+id/editText3"
-            app:layout_constraintEnd_toEndOf="parent"
-
-            app:layout_constraintStart_toEndOf="@+id/editText3" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/textView7"

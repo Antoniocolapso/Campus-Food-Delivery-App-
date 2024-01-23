@@ -55,70 +55,92 @@
 
             />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/five_stars"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/name"
-            app:layout_constraintTop_toTopOf="@+id/constrainedLayout"
-            android:layout_marginEnd="9dp"
-            android:layout_marginTop="4dp"
-            />
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView4"-->
+<!--            android:layout_width="70dp"-->
+<!--            android:layout_height="70dp"-->
+<!--            android:src="@drawable/five_stars"-->
+<!--            app:layout_constraintHorizontal_bias="1"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/name"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/constrainedLayout"-->
+<!--            android:layout_marginEnd="9dp"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            />-->
 
 
         <TextView
             android:id="@+id/rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_5_0"
             android:layout_margin="5dp"
+            android:text="@string/_5_0"
             android:textColor="@color/white"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/imageView4"
-            app:layout_constraintEnd_toStartOf="@id/imageView4"
-            app:layout_constraintTop_toTopOf="@+id/constrainedLayout"
-            />
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_marginStart="30dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/time_svgrepo_com"
-            app:layout_constraintBottom_toBottomOf="@+id/ver_img"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/star_"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name" />
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            app:tint="@color/purple_500" />
 
 
+<!--        <TextView-->
+<!--            android:id="@+id/timing"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/_10_00_23_00"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/imageView5"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/name" />-->
         <TextView
-            android:id="@+id/timing"
+            android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_10_00_23_00"
+            android:text="@string/rate"
+            android:layout_marginEnd="5dp"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_marginStart="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
-            app:layout_constraintTop_toBottomOf="@+id/name" />
+            app:layout_constraintEnd_toStartOf="@+id/imageView8"
+            app:layout_constraintTop_toTopOf="@+id/constrainedLayout" />
+
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/inr"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/price"
+            app:layout_constraintTop_toTopOf="@+id/constrainedLayout"
+            app:tint="@color/purple_500" />
 
         <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/min_45"
+            android:layout_marginEnd="9dp"
+            android:text="@string/_420"
             android:textColor="@color/white"
             android:textStyle="bold"
-            app:layout_constraintHorizontal_bias="1"
-            android:layout_marginEnd="9dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/ver_img"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/timing"
-            app:layout_constraintTop_toBottomOf="@+id/rating" />
+            app:layout_constraintTop_toTopOf="@+id/constrainedLayout" />
 
 
 

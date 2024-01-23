@@ -4,14 +4,24 @@ public class CartModel {
 
     int image;
     String name;
-    String price;
+    int price;
+    int quantity;
     String rating;
 
-    public CartModel(int image, String name, String price, String rating) {
+    public CartModel(int image, String name, int price, String rating, int quantity) {
         this.image = image;
         this.name = name;
         this.price = price;
         this.rating = rating;
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public int getImage() {
@@ -30,11 +40,11 @@ public class CartModel {
         this.name = name;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -44,5 +54,15 @@ public class CartModel {
 
     public void setRating(String rating) {
         this.rating = rating;
+    }
+    public void incrementQuantity() {
+        quantity++;
+    }
+    public void decrementQuantity() {
+        if (quantity > 0) {
+            quantity--;
+        }
+
+
     }
 }

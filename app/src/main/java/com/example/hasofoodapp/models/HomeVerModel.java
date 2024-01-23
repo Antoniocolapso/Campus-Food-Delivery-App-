@@ -4,14 +4,14 @@ public class HomeVerModel {
 
     int image;
     String name;
-    String timing;
+//    String timing;
     String rating;
-    String price;
+    int price;
 
-    public HomeVerModel(int image, String name, String timing, String rating, String price) {
+    public HomeVerModel(int image, String name, String timing, String rating, int price) {
         this.image = image;
         this.name = name;
-        this.timing = timing;
+//        this.timing = timing;
         this.rating = rating;
         this.price = price;
     }
@@ -34,13 +34,13 @@ public class HomeVerModel {
         this.name = name;
     }
 
-    public String getTiming() {
-        return timing;
-    }
-
-    public void setTiming(String timing) {
-        this.timing = timing;
-    }
+//    public String getTiming() {
+//        return timing;
+//    }
+//
+//    public void setTiming(String timing) {
+//        this.timing = timing;
+//    }
 
     public String getRating() {
         return rating;
@@ -50,11 +50,11 @@ public class HomeVerModel {
         this.rating = rating;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }

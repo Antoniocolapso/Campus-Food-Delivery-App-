@@ -6,6 +6,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="rs_amount">Rs %s</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -57,4 +58,12 @@
     <string name="make_order">Make Order</string>
     <string name="_190_63">190.63</string>
     <string name="order_now">Order Now</string>
+    <string name="_1">1</string>
+    <string name="rs_420">Rs. 420</string>
+    <string name="_420">420</string>
+    <string name="rate">Rate :</string>
+    <string name="add_money">Add Money</string>
+    <string name="withdraw_money">Withdraw Money</string>
+    <string name="balance">Balance :</string>
+    <string name="wallet">Wallet</string>
 </resources>
