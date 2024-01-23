@@ -96,21 +96,21 @@
                     android:id="@+id/bottom_rating"
                     />
 
-                <ImageView
-                    android:src="@drawable/time_svgrepo_com"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="2dp"
-                    />
-                <TextView
-                    android:id="@+id/detailed_timing"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="@string/_10_00_23_00"
-                    android:textStyle="bold"
-                    />
+<!--                <ImageView-->
+<!--                    android:src="@drawable/time_svgrepo_com"-->
+<!--                    android:layout_width="15dp"-->
+<!--                    android:layout_height="15dp"-->
+<!--                    android:layout_marginStart="30dp"-->
+<!--                    android:layout_marginTop="2dp"-->
+<!--                    />-->
+<!--                <TextView-->
+<!--                    android:id="@+id/detailed_timing"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="4dp"-->
+<!--                    android:text="@string/_10_00_23_00"-->
+<!--                    android:textStyle="bold"-->
+<!--                    />-->
             </LinearLayout>
 
 

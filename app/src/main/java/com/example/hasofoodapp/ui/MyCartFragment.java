@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -24,11 +25,33 @@ public class MyCartFragment extends Fragment {
     CartAdapter cartAdapter;
     RecyclerView recyclerView;
 
+    int total = 0 ;
 
 
     public MyCartFragment() {
         // Required empty public constructor
     }
+    public void updateTotal() {
+        int total = calculateTotal();
+        TextView totalTextView = getView().findViewById(R.id.total);
+        totalTextView.setText(String.valueOf(total));
+    }
+
+
+
+
+
+    // New method to calculate the total without formatting the string
+    private int calculateTotal() {
+        int total = 0;
+        for (CartModel item : list) {
+            total += item.getPrice()* item.getQuantity();
+        }
+        return total;
+    }
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,15 +64,27 @@ public class MyCartFragment extends Fragment {
 
         list = new ArrayList<>();
 
-        list.add(new CartModel(R.drawable.s1,"Order 1", "Rs. 30","4.2"));
-        list.add(new CartModel(R.drawable.s2,"Order 2", "Rs. 50","4.2"));
-        list.add(new CartModel(R.drawable.fav1,"Order 3", "Rs. 130","4.2"));
-        list.add(new CartModel(R.drawable.s1,"Order 4", "Rs. 30","4.2"));
-        list.add(new CartModel(R.drawable.s2,"Order 5", "Rs. 50","4.2"));
-        list.add(new CartModel(R.drawable.fav1,"Order 6", "Rs. 130","4.2"));
+        list.add(new CartModel(R.drawable.s1,"Order 1", 30,"4.2",1));
+        list.add(new CartModel(R.drawable.s2,"Order 2", 50,"4.2",2));
+        list.add(new CartModel(R.drawable.fav1,"Order 3", 120,"4.2",3));
+        list.add(new CartModel(R.drawable.s1,"Order 4", 30,"4.2",2));
+        list.add(new CartModel(R.drawable.s2,"Order 5", 50,"4.2",3));
+        list.add(new CartModel(R.drawable.fav1,"Order 6", 130,"4.2",4));
 
-        cartAdapter = new CartAdapter(list);
+
+//        int total = 0, i = 0;
+//
+//        for (i = 0; i < list.size(); i++) {
+//            total = total + (list.get(i).getPrice() * list.get(i).getQuantity());
+//        }
+        cartAdapter = new CartAdapter(list,this);
         recyclerView.setAdapter(cartAdapter);
+
+
+
+
+
+
 
         return view;
     }

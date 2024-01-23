@@ -48,11 +48,11 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
         holder.name.setText(list.get(position).getName());
         if (check) {
             ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-            homeVerModels.add((new HomeVerModel(R.drawable.pizza1, "Pizza", "10:00 - 23:00", "4.9", "Min Rs.45")));
-            homeVerModels.add((new HomeVerModel(R.drawable.burger1, "Burger", "10:00 - 23:00", "4.9", "Min Rs.45")));
-            homeVerModels.add((new HomeVerModel(R.drawable.fries1, "Fries", "10:00 - 23:00", "4.9", "Min Rs.45")));
-            homeVerModels.add((new HomeVerModel(R.drawable.icecream1, "IceCream", "10:00 - 23:00", "4.9", "Min Rs.45")));
-            homeVerModels.add((new HomeVerModel(R.drawable.sandwich1, "Sandwich", "10:00 - 23:00", "4.9", "Min Rs.45")));
+            homeVerModels.add((new HomeVerModel(R.drawable.pizza1, "Pizza", "10:00 - 23:00", "4.9", 45)));
+            homeVerModels.add((new HomeVerModel(R.drawable.burger1, "Burger", "10:00 - 23:00", "4.9", 45)));
+            homeVerModels.add((new HomeVerModel(R.drawable.fries1, "Fries", "10:00 - 23:00", "4.9", 45)));
+            homeVerModels.add((new HomeVerModel(R.drawable.icecream1, "IceCream", "10:00 - 23:00", "4.9", 45)));
+            homeVerModels.add((new HomeVerModel(R.drawable.sandwich1, "Sandwich", "10:00 - 23:00", "4.9", 45)));
 
             updateVerticalRec.callBack(position, homeVerModels);
             check = false;
@@ -66,37 +66,37 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
                     if (position == 0){
                         ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                        homeVerModels.add((new HomeVerModel(R.drawable.pizza1,"H.Pizza","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.pizza2,"A.Pizza","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.pizza3,"S.Pizza","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.pizza4,"O.Pizza","10:00 - 23:00","4.9","Min Rs.45")));
+                        homeVerModels.add((new HomeVerModel(R.drawable.pizza1,"H.Pizza","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.pizza2,"A.Pizza","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.pizza3,"S.Pizza","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.pizza4,"O.Pizza","10:00 - 23:00","4.9",45)));
                         updateVerticalRec.callBack(position,homeVerModels);
                     } else if (position == 1) {
                         ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                        homeVerModels.add((new HomeVerModel(R.drawable.burger1,"H.Burger","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.burger2,"A.Burger","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.burger4,"S.Burger","10:00 - 23:00","4.9","Min Rs.45")));
+                        homeVerModels.add((new HomeVerModel(R.drawable.burger1,"H.Burger","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.burger2,"A.Burger","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.burger4,"S.Burger","10:00 - 23:00","4.9",45)));
                         updateVerticalRec.callBack(position,homeVerModels);
                     } else if (position == 2) {
                         ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                        homeVerModels.add((new HomeVerModel(R.drawable.fries1,"H.Fries","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.fries2,"A.Fries","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.fries3,"S.Fries","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.fries4,"O.Fries","10:00 - 23:00","4.9","Min Rs.45")));
+                        homeVerModels.add((new HomeVerModel(R.drawable.fries1,"H.Fries","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.fries2,"A.Fries","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.fries3,"S.Fries","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.fries4,"O.Fries","10:00 - 23:00","4.9",45)));
                         updateVerticalRec.callBack(position,homeVerModels);
                     } else if (position == 3) {
                         ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                        homeVerModels.add((new HomeVerModel(R.drawable.icecream1,"H.IceCream","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.icecream2,"A.IceCream","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.icecream3,"S.IceCream","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.icecream4,"O.IceCream","10:00 - 23:00","4.9","Min Rs.45")));
+                        homeVerModels.add((new HomeVerModel(R.drawable.icecream1,"H.IceCream","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.icecream2,"A.IceCream","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.icecream3,"S.IceCream","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.icecream4,"O.IceCream","10:00 - 23:00","4.9",45)));
                         updateVerticalRec.callBack(position,homeVerModels);
                     } else if (position == 4) {
                         ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                        homeVerModels.add((new HomeVerModel(R.drawable.sandwich1,"H.Sandwich","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.sandwich2,"A.Sandwich","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.sandwich3,"S.Sandwich","10:00 - 23:00","4.9","Min Rs.45")));
-                        homeVerModels.add((new HomeVerModel(R.drawable.sandwich4,"O.Sandwich","10:00 - 23:00","4.9","Min Rs.45")));
+                        homeVerModels.add((new HomeVerModel(R.drawable.sandwich1,"H.Sandwich","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.sandwich2,"A.Sandwich","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.sandwich3,"S.Sandwich","10:00 - 23:00","4.9",45)));
+                        homeVerModels.add((new HomeVerModel(R.drawable.sandwich4,"O.Sandwich","10:00 - 23:00","4.9",45)));
                         updateVerticalRec.callBack(position,homeVerModels);
                     }
 
