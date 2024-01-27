@@ -2,13 +2,18 @@ package com.example.hasofoodapp.models;
 
 public class CartModel {
 
+
+
+
+    int id;
     String image;
     String name;
     int amount;
     int quantity;
     Double rating;
 
-    public CartModel(String image, String name, int amount, Double rating, int quantity) {
+    public CartModel(int id, String image, String name, int amount, Double rating, int quantity) {
+        this.id = id;
         this.image = image;
         this.name = name;
         this.amount = amount;
@@ -58,5 +63,12 @@ public class CartModel {
         }
 
 
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

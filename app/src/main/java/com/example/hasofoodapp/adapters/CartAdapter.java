@@ -5,21 +5,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hasofoodapp.R;
+import com.example.hasofoodapp.models.AddToCartRequest;
 import com.example.hasofoodapp.models.CartModel;
+import com.example.hasofoodapp.network.ApiService;
+import com.example.hasofoodapp.network.RetrofitClient;
 import com.example.hasofoodapp.ui.MyCartFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.Viewholder> {
 
     List<CartModel> list;
     MyCartFragment myCartFragment; // Add a reference to MyCartFragment
+
 
     public CartAdapter(List<CartModel> list, MyCartFragment myCartFragment) {
         this.list = list;
@@ -48,8 +57,24 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.Viewholder> {
             @Override
             public void onClick(View v) {
                 currentItem.incrementQuantity();
+
                 notifyItemChanged(position);
                 myCartFragment.updateTotal();
+                ApiService apiService = RetrofitClient.getApiService().create(ApiService.class);
+                AddToCartRequest request = new AddToCartRequest(2, currentItem.getId(), currentItem.getQuantity());
+                Call<Void> addToCartCall = apiService.addToCart(request);
+                addToCartCall.enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        //
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+                        // Handle failure if needed
+
+                    }
+                });
             }
         });
 
@@ -57,8 +82,24 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.Viewholder> {
             @Override
             public void onClick(View v) {
                 currentItem.decrementQuantity();
+
                 notifyItemChanged(position);
                 myCartFragment.updateTotal();
+                ApiService apiService = RetrofitClient.getApiService().create(ApiService.class);
+                AddToCartRequest request = new AddToCartRequest(2, currentItem.getId(), currentItem.getQuantity());
+                Call<Void> addToCartCall = apiService.addToCart(request);
+                addToCartCall.enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        //
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+                        // Handle failure if needed
+
+                    }
+                });
             }
         });
     }
