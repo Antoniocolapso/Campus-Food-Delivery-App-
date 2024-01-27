@@ -1,22 +1,24 @@
 package com.example.hasofoodapp.models;
 
 public class HomeHorModel {
-    int image;
-    String name;
+    private String image; // Keep the field name as imageUrl
+    private String name;
+    private int id; // Assuming this is the restaurant ID in your code
 
 
-    public HomeHorModel(int image, String name){
-        this.image=image;
-        this.name=name;
 
+    public HomeHorModel(String image, String name, int id) {
+        this.image = image;
+        this.name = name;
+        this.id = id;
     }
 
-    public int getImage() {
+    public String getImageUrl() { // Getter method with the name imageUrl
         return image;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setImageUrl(String imageUrl) { // Setter method with the name imageUrl
+        this.image = imageUrl;
     }
 
     public String getName() {
@@ -25,5 +27,13 @@ public class HomeHorModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getRestaurantId() { // Getter method with the name restaurantId
+        return id;
+    }
+
+    public void setRestaurantId(int restaurantId) { // Setter method with the name restaurantId
+        this.id = restaurantId;
     }
 }

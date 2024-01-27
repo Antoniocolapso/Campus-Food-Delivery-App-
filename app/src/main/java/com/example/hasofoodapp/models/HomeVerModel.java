@@ -2,28 +2,51 @@ package com.example.hasofoodapp.models;
 
 public class HomeVerModel {
 
-    int image;
-    String name;
-//    String timing;
-    String rating;
-    int price;
+    private int id;
+    private String image; // Change the field name to imageUrl
+    private String name;
+    private String rating;
+    private String description;
+    private int cost;
 
-    public HomeVerModel(int image, String name, String timing, String rating, int price) {
+    public HomeVerModel(String image, String name, String rating, String description, int cost, int id) {
         this.image = image;
         this.name = name;
-//        this.timing = timing;
         this.rating = rating;
-        this.price = price;
+        this.description = description;
+        this.cost = cost;
+        this.id = id;
     }
 
+    public int getItemId() {
+        return id;
+    }
 
+    public void SetItemID(int id) {
+        this.id = id;
+    }
 
-    public int getImage() {
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImageUrl() { // Getter method with the name imageUrl
         return image;
     }
+    public int getPrice() {
+        return cost; // Assuming your code's "price" is equivalent to API's "cost"
+    }
 
-    public void setImage(int image) {
-        this.image = image;
+    // Setter method for API's "cost"
+    public void setPrice(int cost) {
+        this.cost = cost; // Assuming your code's "price" is equivalent to API's "cost"
+    }
+    public void setImageUrl(String imageUrl) { // Setter method with the name imageUrl
+        this.image = imageUrl;
     }
 
     public String getName() {
@@ -34,14 +57,6 @@ public class HomeVerModel {
         this.name = name;
     }
 
-//    public String getTiming() {
-//        return timing;
-//    }
-//
-//    public void setTiming(String timing) {
-//        this.timing = timing;
-//    }
-
     public String getRating() {
         return rating;
     }
@@ -50,11 +65,6 @@ public class HomeVerModel {
         this.rating = rating;
     }
 
-    public int getPrice() {
-        return price;
-    }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
+
 }

@@ -40,7 +40,7 @@
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/bottom_img"
             android:layout_width="130dp"
-            android:layout_height="110dp"
+            android:layout_height="150dp"
             android:layout_margin="10dp"
             android:src="@drawable/coffe"
             android:scaleType="centerCrop"
@@ -73,7 +73,7 @@
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:textColor="@color/white"
-                android:singleLine="true"
+
                 />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -143,11 +143,12 @@
                     android:id="@+id/add_to_cart"
                     android:layout_width="97dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
                     android:text="@string/add_to_cart"
                     android:textAllCaps="false"
                     android:textSize="10sp"
                     android:textStyle="bold"
-                    android:layout_marginEnd="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
