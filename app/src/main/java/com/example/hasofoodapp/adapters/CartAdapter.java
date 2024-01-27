@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.hasofoodapp.R;
 import com.example.hasofoodapp.models.CartModel;
 import com.example.hasofoodapp.ui.MyCartFragment;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -36,10 +37,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.Viewholder> {
         CartModel currentItem = list.get(position);
 
         // Now you can use 'currentItem' to set values in your ViewHolder views
-        holder.imageView.setImageResource(currentItem.getImage());
+        Picasso.get().load(currentItem.getImage()).into(holder.imageView);
         holder.name.setText(currentItem.getName());
         holder.price.setText(String.valueOf(currentItem.getPrice()));
-        holder.rating.setText(currentItem.getRating());
+        holder.rating.setText(String.valueOf(currentItem.getRating()));
         holder.quantity.setText(String.valueOf(currentItem.getQuantity()));
 
         // Set click listeners for buttons using 'position'

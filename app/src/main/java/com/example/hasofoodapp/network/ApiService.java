@@ -1,6 +1,7 @@
 package com.example.hasofoodapp.network;
 
 import com.example.hasofoodapp.models.AddToCartRequest;
+import com.example.hasofoodapp.models.CartResponse;
 import com.example.hasofoodapp.models.HomeHorModel;
 import com.example.hasofoodapp.models.HomeVerModel;
 
@@ -20,8 +21,12 @@ public interface ApiService {
     Call<List<HomeVerModel>> getItemsForRestaurant(@Path("restaurantId") int restaurantId);
 
 
+    @GET("/api/catalogue/students/view_cart/{userId}")
+    Call<CartResponse> viewCart(@Path("userId") int userId);
+
     @POST("/api/catalogue/students/add_cart")
     Call<Void> addToCart(@Body AddToCartRequest request);
+
 
 
 }

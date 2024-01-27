@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,10 +15,19 @@ import com.example.hasofoodapp.R;
 import com.example.hasofoodapp.adapters.CartAdapter;
 import com.example.hasofoodapp.models.CartModel;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 
+import com.example.hasofoodapp.models.CartResponse;
+import com.example.hasofoodapp.network.ApiService;
+import com.example.hasofoodapp.network.RetrofitClient;
+
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 public class MyCartFragment extends Fragment {
 
 
@@ -54,9 +64,7 @@ public class MyCartFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_my_cart, container, false);
 
         recyclerView = view.findViewById(R.id.cart_rec);
@@ -64,28 +72,46 @@ public class MyCartFragment extends Fragment {
 
         list = new ArrayList<>();
 
-        list.add(new CartModel(R.drawable.s1,"Order 1", 30,"4.2",1));
-        list.add(new CartModel(R.drawable.s2,"Order 2", 50,"4.2",2));
-        list.add(new CartModel(R.drawable.fav1,"Order 3", 120,"4.2",3));
-        list.add(new CartModel(R.drawable.s1,"Order 4", 30,"4.2",2));
-        list.add(new CartModel(R.drawable.s2,"Order 5", 50,"4.2",3));
-        list.add(new CartModel(R.drawable.fav1,"Order 6", 130,"4.2",4));
+        // Call the API to get the cart items
+        viewCart();
 
-
-//        int total = 0, i = 0;
-//
-//        for (i = 0; i < list.size(); i++) {
-//            total = total + (list.get(i).getPrice() * list.get(i).getQuantity());
-//        }
-        cartAdapter = new CartAdapter(list,this);
+        cartAdapter = new CartAdapter(list, this);
         recyclerView.setAdapter(cartAdapter);
-
-
-
-
-
-
 
         return view;
     }
+
+    private void viewCart() {
+        ApiService apiService = RetrofitClient.getApiService().create(ApiService.class);
+
+        Call<CartResponse> viewCartCall = apiService.viewCart(2); // Hardcoding userID for now
+
+        viewCartCall.enqueue(new Callback<CartResponse>() {
+            @Override
+            public void onResponse(Call<CartResponse> call, Response<CartResponse> response) {
+                if (response.isSuccessful()) {
+                    CartResponse cartResponse = response.body();
+                    if (cartResponse != null) {
+                        // Update your list and notify the adapter
+                        list.clear(); // Clear existing items
+                        list.addAll(cartResponse.getItems()); // Add new items
+                        cartAdapter.notifyDataSetChanged(); // Notify the adapter
+                        updateTotal();
+                    }
+                } else {
+                    // Handle the unsuccessful response
+                    Toast.makeText(getActivity(), "Failed ViewCart", Toast.LENGTH_SHORT).show();
+                    // Show an error message or retry logic
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CartResponse> call, Throwable t) {
+                // Handle failure (network error, timeout, etc.)
+                // Show an error message or retry logic
+                Toast.makeText(getActivity(), "Failure on ViewCart", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }

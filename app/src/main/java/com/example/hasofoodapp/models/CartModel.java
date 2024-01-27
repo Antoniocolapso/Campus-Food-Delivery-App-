@@ -2,16 +2,16 @@ package com.example.hasofoodapp.models;
 
 public class CartModel {
 
-    int image;
+    String image;
     String name;
-    int price;
+    int amount;
     int quantity;
-    String rating;
+    Double rating;
 
-    public CartModel(int image, String name, int price, String rating, int quantity) {
+    public CartModel(String image, String name, int amount, Double rating, int quantity) {
         this.image = image;
         this.name = name;
-        this.price = price;
+        this.amount = amount;
         this.rating = rating;
         this.quantity = quantity;
     }
@@ -24,13 +24,11 @@ public class CartModel {
         this.quantity = quantity;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
-        this.image = image;
-    }
+
 
     public String getName() {
         return name;
@@ -41,20 +39,16 @@ public class CartModel {
     }
 
     public int getPrice() {
-        return price;
+        return amount;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
-    public String getRating() {
+
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(String rating) {
-        this.rating = rating;
-    }
+
     public void incrementQuantity() {
         quantity++;
     }
