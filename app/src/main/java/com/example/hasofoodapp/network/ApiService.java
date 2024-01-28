@@ -4,6 +4,7 @@ import com.example.hasofoodapp.models.AddToCartRequest;
 import com.example.hasofoodapp.models.CartResponse;
 import com.example.hasofoodapp.models.HomeHorModel;
 import com.example.hasofoodapp.models.HomeVerModel;
+import com.example.hasofoodapp.models.OrderModel;
 
 import java.util.List;
 
@@ -27,6 +28,11 @@ public interface ApiService {
     @POST("/api/catalogue/students/add_cart")
     Call<Void> addToCart(@Body AddToCartRequest request);
 
+    @GET("/api/catalogue/students/active_order_list/{restaurantId}")
+    Call<List<OrderModel>> getActiveOrders(@Path("restaurantId") int restaurantId);
+
+    @GET("/api/catalogue/students/order_history/{restaurantId}")
+    Call<List<OrderModel>> getOrderHistory(@Path("restaurantId") int restaurantId);
 
 
 }

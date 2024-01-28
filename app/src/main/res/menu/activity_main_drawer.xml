@@ -21,6 +21,10 @@
             android:icon="@drawable/cart"
             android:title="@string/my_cart" />
         <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_history"
+            android:title="@string/order_history" />
+        <item
             android:id="@+id/nav_wallet"
             android:icon="@drawable/ic_wallet"
             android:title="@string/wallet" />
